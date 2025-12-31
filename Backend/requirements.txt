@@ -2,27 +2,17 @@ Django>=4.2,<5.0
 djangorestframework>=3.14
 djangorestframework-simplejwt>=5.3
 
-# Database
 psycopg2-binary>=2.9
+dj-database-url>=2.1
+setuptools>=68
 
-# Environment variables
 python-decouple>=3.8
-
-# CORS (for React frontend)
-django-cors-headers>=4.3
-
-# Media & static files
-Pillow>=10.0
-whitenoise>=6.6
-
-# Filtering & pagination
-django-filter>=23.5
-
-# API documentation (optional but recommended)
-drf-yasg>=1.21
-
-# Security
 django-environ>=0.11
 
-# Production server
+django-cors-headers>=4.3
+Pillow>=10.0
+whitenoise>=6.6
+django-filter>=23.5
+drf-yasg>=1.21
+
 gunicorn>=21.2
