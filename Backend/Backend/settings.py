@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'store',
+     'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -131,8 +133,7 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 CORS_ALLOW_ALL_ORIGINS=True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -151,4 +152,9 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
     'AUTH_HEADER_TYPES': ('Bearer',),
+}
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get("CLOUD_NAME"),
+    'API_KEY': os.environ.get("API_KEY"),
+    'API_SECRET': os.environ.get("API_SECRET"),
 }
